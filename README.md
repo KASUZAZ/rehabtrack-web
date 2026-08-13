@@ -181,13 +181,19 @@ The ESP32 does **not** receive the Supabase service-role key. It sends data to t
 
 For a production healthcare deployment, add stronger per-device credentials, key rotation, audit logs, rate limiting, TLS certificate verification on ESP32, consent/privacy controls, retention rules and the security/compliance requirements applicable to your jurisdiction.
 
-## 9. Deploy to Vercel
+## 9. Production website (Netlify)
 
-1. Push this project to GitHub.
-2. Import the repository in Vercel.
-3. Add the four environment variables from `.env.example`.
-4. Deploy.
-5. Put the deployed HTTPS URL into `API_URL` in the ESP32 sketch.
+RehabTrack is live at:
+
+https://rehabtrack-web.netlify.app/login
+
+Netlify uses `netlify.toml` to build this Next.js project. Add the four environment variables from `.env.example` in Netlify before deploying. Never commit `.env.local` or any Supabase secret to GitHub.
+
+Put the production telemetry endpoint below into `API_URL` in the ESP32 sketch:
+
+```text
+https://rehabtrack-web.netlify.app/api/telemetry
+```
 
 ## Main folders
 

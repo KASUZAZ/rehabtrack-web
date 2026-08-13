@@ -6,3 +6,7 @@ node_modules
 *.log
 *.tsbuildinfo
 .DS_Store
+next-env.d.ts
+
+# Local Netlify folder
+.netlify
